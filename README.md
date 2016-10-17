@@ -12,7 +12,7 @@ rss feed sources:
 - https://www.youtube.com/feeds/videos.xml?channel_id=UCpYHEAhSUx1hBn2SkvXvTrg
 - http://feeds.feedburner.com/Wallpaperfeed
 
-For Youtube -steps to get RSS feed for a channel:
+For Youtube - steps to get RSS feed for a channel:
 
 - Go to the YouTube channel you want to track
 - View the page’s source code
