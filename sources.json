@@ -1,0 +1,25 @@
+{
+   "rss":[
+      {
+         "feed":"http://www.artsjournal.com/feed"
+      },
+      {
+         "feed":"http://www.artnews.com/feed/"
+      },
+      {
+         "feed":"http://theartnewspaper.com/rss/"
+      },
+      {
+         "feed":"http://www.vogue.com/tag/misc/contemporary-art/rss"
+      },
+      {
+         "feed":"http://feeds.feedburner.com/Wallpaperfeed"
+      },
+      {
+         "feed":"https://www.youtube.com/feeds/videos.xml?channel_id=UCpYHEAhSUx1hBn2SkvXvTrg"
+      },
+      {
+         "feed":"http://feeds.feedburner.com/Wallpaperfeed"
+      }
+   ]
+}
