@@ -6,21 +6,20 @@
                 "id": "post-id"
             },
             "url": "http://www.artsjournal.com/category/visual/feed"
-        }, {
+        },
+        {
             "organization": "ARTnews",
-            "url": "http://www.artnews.com/feed"
+            "selector": "div.main-content img",
+            "url": "http://www.artnews.com/feed/"
         },
         {
             "organization": "The Art Newspaper",
-            "find_image_selector": {
-                "element": "div",
-                "class": "b-shows-main-content",
-                "root": "http://theartnewspaper.com"
-            },
+            "selector": ".b-content img[src]",
             "url": "http://theartnewspaper.com/rss/"
         },
         {
             "organization": "Vogue Art",
+            "selector": "picture img.picture-img",
             "url": "http://www.vogue.com/tag/misc/contemporary-art/rss"
         }, {
             "organization": "Wallpaper*",
@@ -54,9 +53,6 @@
             "url": "http://www.thisiscolossal.com/feed/"
         }, {
             "organization": "Art in America",
-            "replacement": {
-                "imgurl": ["http://www.artinamericamagazine.com%s", "description"]
-            },
             "url": "http://www.artinamericamagazine.com/rss"
         }
 
