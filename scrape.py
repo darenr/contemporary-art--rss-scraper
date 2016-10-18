@@ -73,13 +73,14 @@ def fetch_page_and_parse(feed, url):
     return result
 
 def validate(record):
-    if 'imgurl' in record and record['imgurl'] and
-        if 'description' in record and record['description'] and
-            if 'title' in record and record['title'] and
-                if 'link' in record and record['link']
-                    return True
+    mandatory_fields = ['imgurl', 'description', 'title', 'link']
 
-    return False
+    for field in mandatory_fields:
+        if not (field in record and record[field]):
+            print ' *', 'Missing field', field
+            return False
+
+    return True
 
 
 def process_feed(feed):
