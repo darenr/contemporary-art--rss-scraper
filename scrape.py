@@ -64,9 +64,7 @@ def fetch_page_and_parse(feed, url):
         soup = BeautifulSoup(page.text, 'html5lib')
 
         if 'selector' in feed:
-            print 'selector', feed['selector'], soup.select(feed['selector'])
             for img in soup.select(feed['selector']):
-                print '***', img
                 src = img['src'] if img.has_attr('src') else None
                 if not src:
                     src = img['srcset'] if img.has_attr('srcset') else None
@@ -100,6 +98,9 @@ def process_feed(feed):
 
     rawxml = requests.get(feed['url'], headers=headers)
     d = feedparser.parse(rawxml.text)
+
+    rows = []
+
     for entry in d['entries']:
 
         # standard fields:
@@ -140,17 +141,13 @@ def process_feed(feed):
             for k in m:
                 record[k] = m[k]
 
-        if not validate(record):
-            print 'failed to validate', entry['link']
-            #print json.dumps(record, indent=True)
-            #print '-'*60
-            #for k in entry:
-            #    print k, '\t\t', entry[k]
+        if validate(record):
+            #
+            # any that fail to validate are just ignored
+            #
+            rows.append(record)
 
-            sys.exit(0)
-
-        print record['imgurl']
-        #print '-'*60
+    return rows
 
 
 if __name__ == "__main__":
@@ -159,9 +156,11 @@ if __name__ == "__main__":
         sources = json.loads(f.read().encode('utf-8'))
 
     try:
+        ingest_rows = []
         for feed in sources['feeds']:
-            if feed["organization"] == "Art in America":
-                process_feed(feed)
+            ingest_rows += process_feed(feed)
+
+        print ' *', 'scraped %d records' % (len(ingest_rows))
 
     except Exception, e:
         traceback.print_exc()
