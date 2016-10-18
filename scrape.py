@@ -64,7 +64,9 @@ def fetch_page_and_parse(feed, url):
         soup = BeautifulSoup(page.text, 'html5lib')
 
         if 'selector' in feed:
+            print 'selector', feed['selector'], soup.select(feed['selector'])
             for img in soup.select(feed['selector']):
+                print '***', img
                 src = img['src'] if img.has_attr('src') else None
                 if not src:
                     src = img['srcset'] if img.has_attr('srcset') else None
@@ -139,10 +141,11 @@ def process_feed(feed):
                 record[k] = m[k]
 
         if not validate(record):
+            print 'failed to validate', entry['link']
             #print json.dumps(record, indent=True)
             #print '-'*60
-            for k in entry:
-                print k, '\t\t', entry[k]
+            #for k in entry:
+            #    print k, '\t\t', entry[k]
 
             sys.exit(0)
 
@@ -157,7 +160,7 @@ if __name__ == "__main__":
 
     try:
         for feed in sources['feeds']:
-            if feed["organization"] == "Nowness":
+            if feed["organization"] == "Art in America":
                 process_feed(feed)
 
     except Exception, e:

@@ -32,27 +32,27 @@
             "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpYHEAhSUx1hBn2SkvXvTrg"
         }, {
             "organization": "Contemporary Art Daily",
+            "selector": "#content a img",
             "url": "http://www.contemporaryartdaily.com/feed/"
         }, {
             "organization": "MOMA",
+            "selector": ".happening-hero__image-container__inner img",
             "url": "http://www.moma.org/feeds/exhibitions.rss"
-        }, {
-            "organization": "Art Daily",
-            "url": "http://artdaily.com/rss.asp"
-        }, {
-            "organization": "Art Forum",
-            "url": "http://artforum.com/rss.xml"
-        }, {
+        },  {
             "organization": "BLOUIN ARTINFO",
+            "selector": ".image img",
             "url": "http://www.blouinartinfo.com/rss/visual-arts"
         }, {
             "organization": "Design Milk",
+            "selector": ".featured-image img",
             "url": "http://feeds.feedburner.com/design-milk"
         }, {
             "organization": "Colossal",
+            "selector": "img.size-full",
             "url": "http://www.thisiscolossal.com/feed/"
         }, {
             "organization": "Art in America",
+            "selector": "figure img",
             "url": "http://www.artinamericamagazine.com/rss"
         }
 
