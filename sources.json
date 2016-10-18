@@ -1,23 +1,19 @@
 {
-    "feeds": [
-        {
+    "feeds": [{
             "organization": "ArtsJournal",
             "fields": {
                 "id": "post-id"
             },
             "url": "http://www.artsjournal.com/category/visual/feed"
-        },
-        {
+        }, {
             "organization": "ARTnews",
             "selector": "div.main-content img",
             "url": "http://www.artnews.com/feed/"
-        },
-        {
+        }, {
             "organization": "The Art Newspaper",
             "selector": ".b-content img[src]",
             "url": "http://theartnewspaper.com/rss/"
-        },
-        {
+        }, {
             "organization": "Vogue Art",
             "selector": "picture img.picture-img",
             "url": "http://www.vogue.com/tag/misc/contemporary-art/rss"
@@ -38,7 +34,7 @@
             "organization": "MOMA",
             "selector": ".happening-hero__image-container__inner img",
             "url": "http://www.moma.org/feeds/exhibitions.rss"
-        },  {
+        }, {
             "organization": "BLOUIN ARTINFO",
             "selector": ".image img",
             "url": "http://www.blouinartinfo.com/rss/visual-arts"
