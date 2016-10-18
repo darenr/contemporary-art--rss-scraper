@@ -120,11 +120,15 @@ def process_feed(feed):
 
 
         if not record['imgurl']:
-            print json.dumps(record, indent=True)
-            m = fetch_page_and_parse(feed, record['link'])
-            for k in m:
-                record[k] = m[k]
+            for k, v in fetch_page_and_parse(feed, record['link']):
+                record[k] = v
 
+        print json.dumps(record, indent=True)
+        print '-'*60
+        for k in entry:
+            print k, '\t\t', entry[k]
+
+        sys.exit(0)
 
         #print record['imgurl']
         #print '-'*60
@@ -137,7 +141,8 @@ if __name__ == "__main__":
 
     try:
         for feed in sources['feeds']:
-            process_feed(feed)
+            if feed["organization"] == "ArtsJournal":
+                process_feed(feed)
 
     except Exception, e:
         traceback.print_exc()
