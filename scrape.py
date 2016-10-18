@@ -70,6 +70,7 @@ def fetch_page_and_parse(feed, url):
             if 'content' in soup.find('meta', {"property": "og:image"}):
                 result['imgurl'] = soup.find('meta', {"property": "og:image"})['content']
 
+    return result
 
 def process_feed(feed):
     rawxml = requests.get(feed['url'])
