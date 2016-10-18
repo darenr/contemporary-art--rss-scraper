@@ -1,25 +1,64 @@
 {
-   "rss":[
-      {
-         "feed":"http://www.artsjournal.com/feed"
-      },
-      {
-         "feed":"http://www.artnews.com/feed/"
-      },
-      {
-         "feed":"http://theartnewspaper.com/rss/"
-      },
-      {
-         "feed":"http://www.vogue.com/tag/misc/contemporary-art/rss"
-      },
-      {
-         "feed":"http://feeds.feedburner.com/Wallpaperfeed"
-      },
-      {
-         "feed":"https://www.youtube.com/feeds/videos.xml?channel_id=UCpYHEAhSUx1hBn2SkvXvTrg"
-      },
-      {
-         "feed":"http://feeds.feedburner.com/Wallpaperfeed"
-      }
-   ]
+    "feeds": [
+        {
+            "organization": "ArtsJournal",
+            "fields": {
+                "id": "post-id"
+            },
+            "url": "http://www.artsjournal.com/category/visual/feed"
+        }, {
+            "organization": "ARTnews",
+            "url": "http://www.artnews.com/feed"
+        },
+        {
+            "organization": "The Art Newspaper",
+            "find_image_selector": {
+                "element": "div",
+                "class": "b-shows-main-content",
+                "root": "http://theartnewspaper.com"
+            },
+            "url": "http://theartnewspaper.com/rss/"
+        },
+        {
+            "organization": "Vogue Art",
+            "url": "http://www.vogue.com/tag/misc/contemporary-art/rss"
+        }, {
+            "organization": "Wallpaper*",
+            "fields": {
+                "link": "id"
+            },
+            "url": "http://feeds.feedburner.com/Wallpaperfeed"
+        }, {
+            "organization": "Nowness",
+            "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCpYHEAhSUx1hBn2SkvXvTrg"
+        }, {
+            "organization": "Contemporary Art Daily",
+            "url": "http://www.contemporaryartdaily.com/feed/"
+        }, {
+            "organization": "MOMA",
+            "url": "http://www.moma.org/feeds/exhibitions.rss"
+        }, {
+            "organization": "Art Daily",
+            "url": "http://artdaily.com/rss.asp"
+        }, {
+            "organization": "Art Forum",
+            "url": "http://artforum.com/rss.xml"
+        }, {
+            "organization": "BLOUIN ARTINFO",
+            "url": "http://www.blouinartinfo.com/rss/visual-arts"
+        }, {
+            "organization": "Design Milk",
+            "url": "http://feeds.feedburner.com/design-milk"
+        }, {
+            "organization": "Colossal",
+            "url": "http://www.thisiscolossal.com/feed/"
+        }, {
+            "organization": "Art in America",
+            "replacement": {
+                "imgurl": ["http://www.artinamericamagazine.com%s", "description"]
+            },
+            "url": "http://www.artinamericamagazine.com/rss"
+        }
+
+    ]
 }
