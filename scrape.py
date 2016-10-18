@@ -72,6 +72,16 @@ def fetch_page_and_parse(feed, url):
 
     return result
 
+def validate(record):
+    if 'imgurl' in record and record['imgurl'] and
+        if 'description' in record and record['description'] and
+            if 'title' in record and record['title'] and
+                if 'link' in record and record['link']
+                    return True
+
+    return False
+
+
 def process_feed(feed):
     rawxml = requests.get(feed['url'])
     d = feedparser.parse(rawxml.text)
@@ -123,10 +133,11 @@ def process_feed(feed):
             for k, v in fetch_page_and_parse(feed, record['link']):
                 record[k] = v
 
-        print json.dumps(record, indent=True)
-        print '-'*60
-        for k in entry:
-            print k, '\t\t', entry[k]
+        if not validate(record):
+            print json.dumps(record, indent=True)
+            print '-'*60
+            for k in entry:
+                print k, '\t\t', entry[k]
 
         sys.exit(0)
 
